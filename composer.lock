@@ -1,0 +1,59 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "ac3cb8b26d714494b603fac0d5d96ba9",
+    "content-hash": "cdf346845de23cd6e4d5f818c5f19fa1",
+    "packages": [
+        {
+            "name": "daijie/aria2",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/shiny/php-aria2.git",
+                "reference": "5404ca87891286be682f0759a6d9297a8690a4c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/shiny/php-aria2/5404ca87891286be682f0759a6d9297a8690a4c6.zip",
+                "reference": "5404ca87891286be682f0759a6d9297a8690a4c6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "WTFPL"
+            ],
+            "authors": [
+                {
+                    "name": "DaiJie",
+                    "email": "daijie@php.net"
+                }
+            ],
+            "description": "talk with aria2",
+            "homepage": "https://github.com/shiny/php-aria2",
+            "keywords": [
+                "aria2"
+            ],
+            "time": "2015-06-22 09:23:57"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
