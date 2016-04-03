@@ -1,0 +1,21 @@
+{
+  "apps": [
+    {
+      "name": "php_server",
+      "script": "php",
+      "args": [
+        "-S",
+        "0.0.0.0:8080"
+      ],
+      "exec_interpreter": "none"
+    },
+    {
+      "name": "aria2",
+      "script": "aria2c",
+      "args": [
+        "--conf=/etc/aria2/aria2.conf"
+      ],
+      "exec_interpreter": "none"
+    }
+  ]
+}

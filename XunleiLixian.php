@@ -38,12 +38,7 @@ class XunleiLixian
 
         exec(sprintf('%s add %s', static::$cli_path, escapeshellarg($url)), $output, $rs);
 
-        $arr = explode(' ', $output[1]);
-
-        if ($arr[1] !== 'completed') {
-            throw new Exception('The Xunlei Not Cache');
-        }
-
+        $arr = explode(' ', $output[count($output) - 1]);
         return $arr[0];
     }
 

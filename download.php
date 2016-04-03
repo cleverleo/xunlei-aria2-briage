@@ -35,7 +35,7 @@ $file_list = XunleiLixian::downloadByUrl($_POST['url']);
 
 
 foreach ($file_list as $item) {
-    $aria2->addUri([$item['download_link']], ['header' => ['Cookie: gdriveid=' . $gdriveid], 'dir' => $base_dir . $item['file_path']]);
+    $aria2->addUri([$item['download_link']], ['header' => ['Cookie: gdriveid=' . $gdriveid], 'out' => $base_dir . $item['file_path']]);
 }
 
 die(json_encode(['success' => true, 'file_count' => count($file_list)]));
