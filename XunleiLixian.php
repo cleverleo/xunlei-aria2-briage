@@ -10,11 +10,20 @@ class XunleiLixian
 {
     public static $cli_path = './lx';
 
+    private static function exec($cmd)
+    {
+        exec($cmd, $output, $rs);
+
+        if ($rs !== 0) {
+            throw new Exception('Unknown Exception');
+        }
+
+        return $output;
+    }
+
     public static function getTasks($path = '')
     {
-        $rs = [];
-
-        exec(sprintf('%s list %s --completed --download-url', static::$cli_path, $path ? escapeshellarg($path) : ''), $rs);
+        $rs = static::exec(sprintf('%s list %s --completed --download-url', static::$cli_path, $path ? escapeshellarg($path) : ''));
 
         return array_map(function ($line) use ($path) {
             $line_arr = explode(' ', $line);
@@ -34,9 +43,7 @@ class XunleiLixian
 
     public static function addTasks($url)
     {
-        $rs = [];
-
-        exec(sprintf('%s add %s', static::$cli_path, escapeshellarg($url)), $output, $rs);
+        $output = static::exec(sprintf('%s add %s', static::$cli_path, escapeshellarg($url)));
 
         $arr = explode(' ', $output[count($output) - 1]);
         return $arr[0];
@@ -44,16 +51,12 @@ class XunleiLixian
 
     public static function login()
     {
-        exec(sprintf('%s login', static::$cli_path), $output, $rs);
-
-        if ($rs !== 0) {
-            throw new Exception('The Xunlei Login Fail');
-        }
+        static::exec(sprintf('%s login', static::$cli_path));
     }
 
     public static function getInfo()
     {
-        exec(sprintf('%s info', static::$cli_path), $output, $rs);
+        $output = static::exec(sprintf('%s info', static::$cli_path));
 
         $out = [];
         foreach ($output as $line) {
