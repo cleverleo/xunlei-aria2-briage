@@ -29,7 +29,6 @@ if (!isset($glb_option['result']['dir'])) {
 
 $base_dir = $glb_option['result']['dir'];
 
-XunleiLixian::login();
 $gdriveid = XunleiLixian::getInfo()['gdriveid'];
 $file_list = XunleiLixian::downloadByUrl($_POST['url']);
 
