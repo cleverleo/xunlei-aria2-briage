@@ -15,7 +15,7 @@ class XunleiLixian
         exec($cmd, $output, $rs);
 
         if ($rs !== 0) {
-            throw new Exception('Unknown Exception' . "\n" . join("\n", $output));
+            throw new Exception('Unknown Exception' . "\n" . $cmd . "\n" . join("\n", $output));
         }
 
         return $output;
