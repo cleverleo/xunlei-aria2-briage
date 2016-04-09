@@ -22,9 +22,6 @@ if (!isset($_POST['url'])) {
 
 $aria2 = new Aria2('http://127.0.0.1:6800/jsonrpc');
 
-if (!isset($glb_option['result']['dir'])) {
-    throw new Exception('The Aria2 Server Not Correct');
-}
 
 $gdriveid = XunleiLixian::getInfo()['gdriveid'];
 $file_list = XunleiLixian::downloadByUrl($_POST['url']);
