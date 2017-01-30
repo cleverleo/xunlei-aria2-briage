@@ -12,7 +12,8 @@ class XunleiLixian
 
     private static function exec($cmd)
     {
-        exec($cmd, $output, $rs);
+        $set_charset = 'export LANG=en_US.UTF-8;';
+        exec($set_charset . $cmd, $output, $rs);
 
         if ($rs !== 0) {
             throw new Exception('Unknown Exception' . "\n" . $cmd . "\n" . join("\n", $output));
